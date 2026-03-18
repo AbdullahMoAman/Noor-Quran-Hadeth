@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>منصة نور | Noor Platform</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Overlay for mobile menu -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+      <div class="container header-container">
+        <div class="logo">
+          <i class="fa-solid fa-moon"></i>
+          <span>نور</span>
+        </div>
+
+        <nav class="nav" id="nav-menu">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="#" class="nav-link active">الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a href="#quran" class="nav-link">القرآن الكريم</a>
+            </li>
+            <li class="nav-item">
+              <a href="#sunnah" class="nav-link">السنة النبوية</a>
+            </li>
+            <li class="nav-item">
+              <a href="#articles" class="nav-link">المقالات والبحوث</a>
+            </li>
+            <li class="nav-item">
+              <a href="#media" class="nav-link">المرئيات</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <button
+            class="icon-btn search-btn"
+            id="search-toggle"
+            aria-label="بحث"
+          >
+            <i class="fa-solid fa-search"></i>
+          </button>
+          <div class="language-switcher dropdown">
+            <button
+              class="icon-btn lang-btn"
+              id="lang-toggle"
+              aria-label="تغيير اللغة"
+            >
+              <i class="fa-solid fa-globe"></i>
+              <span class="lang-text" id="current-lang">العربية</span>
+            </button>
+            <ul class="dropdown-menu" id="lang-menu">
+              <li><a href="#" data-lang="ar">العربية</a></li>
+              <li><a href="#" data-lang="en">English</a></li>
+              <li><a href="#" data-lang="ur">اردو</a></li>
+            </ul>
+          </div>
+          <button
+            class="icon-btn mobile-toggle"
+            id="mobile-toggle"
+            aria-label="القائمة"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Search Bar Dropdown -->
+      <div class="search-bar" id="search-bar">
+        <div class="container search-container">
+          <input
+            type="text"
+            placeholder="ابحث في المقالات، التفاسير، الآيات..."
+            id="search-input"
+          />
+          <button class="btn btn-primary" id="search-submit">بحث</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+      </div>
+      <div class="container hero-content">
+        <span class="badge" id="hero-badge">مرحباً بك في منصة نور</span>
+        <h1 class="hero-title" id="hero-title">
+          اكتشف عمق المعرفة <br />
+          <span class="highlight">القرآنية والنبوية</span>
+        </h1>
+        <p class="hero-subtitle" id="hero-subtitle">
+          منصة حديثة تجمع بين أصالة التراث وروعة التصميم، لتقديم محتوى إسلامي
+          موثوق، مقالات علمية، وتفاسير ميسرة.
+        </p>
+        <div class="hero-buttons">
+          <a href="#articles" class="btn btn-primary btn-lg" id="btn-explore"
+            >تصفح المحتوى <i class="fa-solid fa-arrow-left"></i
+          ></a>
+          <a href="#quran" class="btn btn-outline btn-lg" id="btn-quran"
+            >اقرأ القرآن</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories / Topics -->
+    <section class="categories section-padding" id="categories">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">الأقسام الرئيسية</h2>
+          <a href="#" class="view-all"
+            >عرض الكل <i class="fa-solid fa-chevron-left"></i
+          ></a>
+        </div>
+        <div class="grid categories-grid" id="categories-container">
+          <!-- Categories will be injected via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Section (Quran & Sunnah) -->
+    <section class="featured section-padding bg-light">
+      <div class="container">
+        <div class="featured-wrapper">
+          <!-- Daily Verse -->
+          <div class="featured-card quran-card reveal">
+            <div class="card-header">
+              <div class="card-icon">
+                <i class="fa-solid fa-book-quran"></i>
+              </div>
+              <h3>آية اليوم</h3>
+            </div>
+            <div class="card-body">
+              <p class="quran-text" id="daily-verse">
+                "۞ اللَّهُ نُورُ السَّمَاوَاتِ وَالْأَرْضِ ۚ مَثَلُ نُورِهِ
+                كَمِشْكَاةٍ فِيهَا مِصْبَاحٌ..."
+              </p>
+              <p class="quran-ref" id="daily-verse-ref">سورة النور - آية 35</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn btn-text">عرض التفسير</a>
+              <button class="icon-btn btn-play" aria-label="استماع">
+                <i class="fa-solid fa-play"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Daily Hadith -->
+          <div class="featured-card sunnah-card reveal">
+            <div class="card-header">
+              <div class="card-icon"><i class="fa-solid fa-scroll"></i></div>
+              <h3>حديث اليوم</h3>
+            </div>
+            <div class="card-body">
+              <p class="hadith-text" id="daily-hadith">
+                "إنما الأعمال بالنيات، وإنما لكل امرئ ما نوى..."
+              </p>
+              <p class="hadith-ref" id="daily-hadith-ref">رواه البخاري ومسلم</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn btn-text">شرح الحديث</a>
+              <div class="share-actions">
+                <button class="icon-btn">
+                  <i class="fa-solid fa-share-nodes"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Latest Articles -->
+    <section class="articles section-padding" id="articles">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">المقالات والبحوث</h2>
+            <p class="section-desc">دراسات قرآنية وإشكالات علمية متنوعة</p>
+          </div>
+          <!-- Mock Filter -->
+          <div class="filter-group">
+            <button class="filter-btn active" data-filter="all">الكل</button>
+            <button class="filter-btn" data-filter="tafsir">تفسير</button>
+            <button class="filter-btn" data-filter="studies">
+              دراسات معاصرة
+            </button>
+          </div>
+        </div>
+
+        <div class="grid articles-grid" id="articles-container">
+          <!-- Articles injected via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter section-padding">
+      <div class="container">
+        <div class="newsletter-box reveal">
+          <div class="newsletter-content">
+            <h2>اشترك في النشرة البريدية</h2>
+            <p>
+              احصل على أحدث المقالات والبحوث والدراسات القرآنية مباشرة في بريدك
+              الإلكتروني.
+            </p>
+          </div>
+          <form class="newsletter-form" id="newsletter-form">
+            <input type="email" placeholder="البريد الإلكتروني" required />
+            <button type="submit" class="btn btn-secondary">اشترك الآن</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="logo">
+              <i class="fa-solid fa-moon"></i>
+              <span>نور</span>
+            </div>
+            <p class="footer-desc">
+              منصة حديثة تهتم بالدراسات القرآنية والسنة النبوية، تقدم محتوى
+              موثوقاً بتصميم عصري يواكب تطلعات المستخدمين.
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-youtube"></i></a>
+              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-links">
+            <h3>روابط سريعة</h3>
+            <ul>
+              <li><a href="#">الرئيسية</a></li>
+              <li><a href="#">القرآن الكريم</a></li>
+              <li><a href="#">المكتبة الصوتية</a></li>
+              <li><a href="#">الإصدارات المرئية</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links">
+            <h3>أقسام المحتوى</h3>
+            <ul>
+              <li><a href="#">مقالات</a></li>
+              <li><a href="#">دراسات قرآنية غريبة</a></li>
+              <li><a href="#">نقاشات علمية</a></li>
+              <li><a href="#">ملفات وبحوث</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-contact">
+            <h3>تواصل معنا</h3>
+            <ul>
+              <li>
+                <i class="fa-solid fa-envelope"></i> info@noorplatform.com
+              </li>
+              <li>
+                <i class="fa-solid fa-location-dot"></i> الرياض، المملكة العربية
+                السعودية
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 منصة نور. نموذج تصميم مبدئي (Prototype).</p>
+          <div class="footer-bottom-links">
+            <a href="#">سياسة الخصوصية</a>
+            <a href="#">الشروط والأحكام</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
