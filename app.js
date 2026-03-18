@@ -63,6 +63,26 @@ class MockData {
         date: "08 مارس 2026",
         img: "https://surahquran.com/Tajweed/Pictures/tajweed.png",
       },
+      {
+        id: 4,
+        title: "أثر التكنولوجيا في تعليم القرآن الكريم للصغار",
+        excerpt:
+          "استعراض لأحدث التطبيقات والأساليب التقنية في تحفيظ وتعليم القرآن الكريم.",
+        category: "تطبيقات قرآنية",
+        type: "studies",
+        date: "05 مارس 2026",
+        img: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=800",
+      },
+      {
+        id: 5,
+        title: "مقاصد الشريعة في المعاملات المالية المعاصرة",
+        excerpt:
+          "دراسة فقهية مقاصدية للتعاملات المالية الحديثة والعملات الرقمية.",
+        category: "فقه وأصول",
+        type: "studies",
+        date: "01 مارس 2026",
+        img: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800",
+      },
     ];
   }
 
@@ -94,8 +114,6 @@ class UIController {
     this.categoriesContainer = document.getElementById("categories-container");
     this.articlesContainer = document.getElementById("articles-container");
     this.filterBtns = document.querySelectorAll(".filter-btn");
-
-    this.reveals = document.querySelectorAll(".reveal");
 
     this.newsletterForm = document.getElementById("newsletter-form");
   }
@@ -204,13 +222,14 @@ class UIController {
     }
 
     // Reveal Animations
-    for (let i = 0; i < this.reveals.length; i++) {
+    const reveals = document.querySelectorAll(".reveal");
+    for (let i = 0; i < reveals.length; i++) {
       let windowHeight = window.innerHeight;
-      let elementTop = this.reveals[i].getBoundingClientRect().top;
-      let elementVisible = 100;
+      let elementTop = reveals[i].getBoundingClientRect().top;
+      let elementVisible = 50; // trigger sooner
 
       if (elementTop < windowHeight - elementVisible) {
-        this.reveals[i].classList.add("active");
+        reveals[i].classList.add("active");
       }
     }
   }
